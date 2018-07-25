@@ -136,6 +136,7 @@ gulp.task(TEST, function(callback) {
 // run this task by typing in gulp pug in CLI
 gulp.task(PUG, function() {  
     return gulp.src('views/*.pug')
+   
     //     .pipe(pug(
     //     //     {
     //     //     doctype:'html',
