@@ -4,7 +4,7 @@ import * as winston from "winston";
 import {json} from "body-parser";
 import * as morgan from "morgan";
 import {Express, Request, Response} from "express";
-import {Router} from "./Router";
+import {initController} from "./routers";
 
 const PORT: number = 3002;
 
@@ -40,12 +40,20 @@ export class Server {
             next();
         });
 
+<<<<<<< HEAD
         Router.setupRoutes(app);
         app.listen(PORT, () => winston.log("info", "--> Server successfully started at port %d", PORT));
     }
 
     
 
+=======
+        //Server.setupRoutes(app);
+        app.use('/',initController);
+        app.listen(PORT, () => winston.log("info", "--> Server successfully started at port %d", PORT));
+    }
+
+>>>>>>> 07e4903e16caf5c93c5470d30330bd75de324099
 }
 
 Server.start();
