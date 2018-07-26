@@ -4,6 +4,7 @@ import * as winston from "winston";
 import {json} from "body-parser";
 import * as morgan from "morgan";
 import {Express, Request, Response} from "express";
+import {initController} from "./routers";
 
 const PORT: number = 3002;
 
@@ -38,25 +39,9 @@ export class Server {
             next();
         });
 
-        Server.setupRoutes(app);
+        //Server.setupRoutes(app);
+        app.use('/',initController);
         app.listen(PORT, () => winston.log("info", "--> Server successfully started at port %d", PORT));
-    }
-
-    /**
-     * Setup all endpoints of your API. You can extend this method or if there are many different routes,
-     * it might be better to move this to a separate class.
-     */
-    private static setupRoutes(app: Express): void {
-        app.get("/", (req: Request, res: Response) => {
-            res.status(200).send("Server running ...");
-        });
-        app.get("/test", (req: Request, res: Response) => {
-            res.status(200).send("Server Test ...");
-        });
-        app.get("/testview", (req: Request, res: Response) => {
-            res.render('index',{title:'Copper-Suite'});
-            // res.status(200).send("Server Test ...");
-        });
     }
 
 }
