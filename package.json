@@ -22,6 +22,7 @@
         "tslint": "gulp tslint"
     },
     "dependencies": {
+        "@types/bluebird": "^3.5.5",
         "body-parser": "1.18.2",
         "express": "4.16.2",
         "morgan": "1.9.0",
