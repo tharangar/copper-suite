@@ -26,6 +26,7 @@ const TEST = "test";
 const REMAP_COVERAGE = "remap:coverage";
 const WATCH = "watch";
 const PUG = "pug";
+const COPY_PUBLIC = "copy-public";
 
 const TS_SRC_GLOB = "./src/**/*.ts";
 const TS_TEST_GLOB = "./test/**/*.ts";
@@ -78,7 +79,7 @@ gulp.task(COMPILE_TYPESCRIPT, function() {
 
 // Runs all required steps for the build in sequence.
 gulp.task(BUILD, function(callback) {
-    runSequence(CLEAN_BUILD,PUG, TSLINT, COMPILE_TYPESCRIPT, callback);
+    runSequence(CLEAN_BUILD,COPY_PUBLIC,PUG, TSLINT, COMPILE_TYPESCRIPT, callback);
 });
 
 // Generates a documentation based on the code comments in the *.ts files.
@@ -144,6 +145,12 @@ gulp.task(PUG, function() {
         // }
    // )) // pipe to pug plugin
         .pipe(gulp.dest("build/views"));
+});
+
+//copy public folder into build
+gulp.task(COPY_PUBLIC,function(){
+    return gulp.src('public/*')
+            .pipe(gulp.dest('build/public'));
 });
 
 

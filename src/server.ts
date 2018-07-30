@@ -28,7 +28,7 @@ export class Server {
         app.set("view engine", "pug");
 
         // staic public folder
-        app.use(express.static(path.join(__dirname, "public")));
+        app.use(express.static(path.join(__dirname, "../public")));
 
         // Set headers for CORS requests
         // TODO: Adjust these settings to your security concerns!
