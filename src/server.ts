@@ -6,7 +6,7 @@ import * as morgan from "morgan";
 import {Express, Request, Response} from "express";
 import {initController} from "./routers";
 
-const PORT: number = 3002;
+const PORT: number = 3001;
 
 /**
  * Basic configurations of all middleware libraries are applied here.

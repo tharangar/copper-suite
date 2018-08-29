@@ -23,10 +23,14 @@
     },
     "dependencies": {
         "@types/bluebird": "^3.5.5",
+        "@types/socket.io": "^1.4.38",
+        "@types/socket.io-client": "^1.4.32",
         "body-parser": "1.18.2",
         "express": "4.16.2",
         "morgan": "1.9.0",
-        "pug": "^2.0.3"
+        "pug": "^2.0.3",
+        "socket.io": "^2.1.1",
+        "socket.io-client": "^2.1.1"
     },
     "devDependencies": {
         "@types/body-parser": "~1.16.8",

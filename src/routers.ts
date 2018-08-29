@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
-import {check_os_test} from "./operations/check_environment";
+import { check_os_test} from "./operations/check_environment";
+import { Agent_connector } from "./operations/Agent_connector";
 
 const router: Router = Router();
 
@@ -14,5 +15,11 @@ const router: Router = Router();
             res.render("index",{title : "Copper-Suite", val : [1, 2, 3, 33, 10 ], os: os } );
             // res.status(200).send("Server Test ...");
         });
+    router.get("/agents", (req: Request, res: Response) => {
+            let Agents = Agent_connector("hi");
+            res.status(200).send("Agent connected....");
+            // res.status(200).send("Server Test ...");
+        });
+    
 
 export const initController: Router = router;
