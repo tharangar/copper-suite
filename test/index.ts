@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {addTwo} from "../src/test";
+import {addTwo} from "../src/gitfunctions";
 
 describe("Testing demo function", () => {
     it("Should add two to input", () => {

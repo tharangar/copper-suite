@@ -11,6 +11,7 @@ const PORT: number = 3001;
 /**
  * Basic configurations of all middleware libraries are applied here.
  */
+
 export class Server {
 
     public static start() {
@@ -39,11 +40,20 @@ export class Server {
             next();
         });
 
+<<<<<<< HEAD
+        Router.setupRoutes(app);
+        app.listen(PORT, () => winston.log("info", "--> Server successfully started at port %d", PORT));
+    }
+
+    
+
+=======
         //Server.setupRoutes(app);
         app.use('/',initController);
         app.listen(PORT, () => winston.log("info", "--> Server successfully started at port %d", PORT));
     }
 
+>>>>>>> 07e4903e16caf5c93c5470d30330bd75de324099
 }
 
 Server.start();
